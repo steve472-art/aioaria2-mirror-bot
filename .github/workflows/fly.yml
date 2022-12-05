@@ -13,4 +13,4 @@ jobs:
       
         - uses: actions/checkout@v3
         - uses: superfly/flyctl-actions/setup-flyctl@master
-        - run: flyctl deploy --remote-only docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        - run: flyctl deploy --remote-only . --file Dockerfile --tag my-image-name:$(date +%s)
