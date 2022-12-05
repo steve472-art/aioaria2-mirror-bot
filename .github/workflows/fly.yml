@@ -8,9 +8,9 @@ env:
 jobs:
   deploy:
       name: Deploy app
-      runs-on: Docker
+      runs-on: ubuntu-latest
       steps:
+      
         - uses: actions/checkout@v3
         - uses: superfly/flyctl-actions/setup-flyctl@master
-        - run: flyctl deploy --remote-only
-        
+        - run: flyctl deploy --remote-only docker build . --file Dockerfile --tag my-image-name:$(date +%s)
